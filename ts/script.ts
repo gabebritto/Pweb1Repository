@@ -1,33 +1,42 @@
-function isContaPoupanca() {
-    const tipoContaId = document.querySelector('#tipo-de-conta');
+function isContaPoupanca(){
+    const tipoContaId: HTMLInputElement = <HTMLInputElement>document.querySelector('#tipo-de-conta');
     const formConta = document.querySelector('#form-conta');
-    if (tipoContaId.valueAsNumber == 3) {
-        if (!document.querySelector('#div-data-aniversario')) {
+
+    if(tipoContaId.valueAsNumber == 3) 
+    {   
+        if (!document.querySelector('#div-data-aniversario')){
             const divDataAniversario = document.createElement('div');
             divDataAniversario.setAttribute('id', 'div-data-aniversario');
             divDataAniversario.textContent = 'Data de Aniversário: ';
+
             const inputDataAniversario = document.createElement('input');
-            inputDataAniversario.setAttribute('id', 'data-aniversario');
+            inputDataAniversario.setAttribute('id','data-aniversario');
             inputDataAniversario.setAttribute('type', 'date');
+
             divDataAniversario.appendChild(inputDataAniversario);
+
             return formConta.appendChild(divDataAniversario);
         }
-    }
-    else {
+    }else {
         if (document.querySelector('#div-data-aniversario')) {
             formConta.removeChild(document.querySelector('#div-data-aniversario'));
         }
     }
 }
+
 const c1 = new Conta('1', 100);
 const c2 = new Conta('2');
 const contaBonificada = new ContaBonificada('10', 100);
 contaBonificada.creditar(10);
+
 const contaController = new ContaController();
+
 contaController.adicionarConta(c1);
 contaController.adicionarConta(c2);
 contaController.adicionarConta(contaBonificada);
 contaController.listar();
+
+
 // const repContas = new RepositorioContas();
 //
 // const c1 = new Conta('1', 100);
@@ -37,6 +46,7 @@ contaController.listar();
 // repContas.adicionar(c2);
 //
 // repContas.getContas().forEach(conta => console.log(conta.numero))
+
 // console.log(c1.saldo)
 // console.log(c2.saldo)
 //

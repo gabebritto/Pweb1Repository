@@ -1,17 +1,23 @@
 class RepositorioContas {
+    private _contas;
+
     constructor() {
         this._contas = new Array();
     }
-    adicionar(conta) {
+
+    adicionar(conta: Conta) {
         this._contas.push(conta);
     }
-    pesquisar(numero) {
+
+    pesquisar(numero: string) {
         return this._contas.find(conta => conta.numero === numero);
     }
-    getContas() {
+
+    getContas(){
         return this._contas;
     }
-    remover(numero) {
+
+    remover(numero: string) {
         const contaARemover = this.pesquisar(numero);
         if (contaARemover) {
             const indiceARemover = this._contas.indexOf(contaARemover);

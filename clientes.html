@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Bancário</title>
+</head>
+<body>
+    <h1>Clientes</h1>
+    <form>
+        <div id="form-cliente">
+            <div>
+                <select name="tipo-de-conta" id="tipo-de-conta">
+                    <option value="1">Cliente Comum</option>
+                    <option value="2">Cliente Especial</option>
+                </select>
+            </div>
+            Nome: <input id="nome"><br>
+            Cpf: <input id="cpf"><br>
+            Conta: <input id="Conta">
+        </div> <br>
+        <button onclick="clienteController.inserir(event)">Inserir</button>
+    </form>
+
+    <script src="js/modelo/cliente.js"></script>
+    <script src="js/modelo/cliente-especial.js"></script>
+    <script src="js/modelo/clientes.js"></script>
+    <script src="js/modelo/conta.js"></script>
+    <script src="js/controlador/cliente-controller.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -2,6 +2,9 @@ class ContaController {
     constructor() {
         this._repositorioContas = new RepositorioContas();
     }
+    get repositorioContas() {
+        return this._repositorioContas;
+    }
     adicionarConta(conta) {
         this._repositorioContas.adicionar(conta);
     }

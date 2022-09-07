@@ -26,17 +26,26 @@ function isContaPoupanca(){
 
 const c1 = new Conta('1', 100);
 const c2 = new Conta('2');
-const contaBonificada = new ContaBonificada('10', 100);
-contaBonificada.creditar(10);
+// const contaBonificada = new ContaBonificada('10', 100);
+// const contaController = new ContaController();
 
-const contaController = new ContaController();
+// contaBonificada.creditar(10);
+// contaController.adicionarConta(c1);
+// contaController.adicionarConta(c2);
+// contaController.adicionarConta(contaBonificada);
+// contaController.listar();
 
-contaController.adicionarConta(c1);
-contaController.adicionarConta(c2);
-contaController.adicionarConta(contaBonificada);
-contaController.listar();
+//Clientes
+const cl1 = new Cliente('Pedro', '111', c1);
+const clienteController = new ClienteController();
 
-
+clienteController.adicionarCliente(cl1);
+clienteController.listar();
+let clientePesquisado = clienteController.repositorioClientes.pesquisar('111');
+console.log(clientePesquisado);
+clienteController.repositorioClientes.remover('111');
+console.log(clienteController.repositorioClientes.getClientes());
+clienteController.listar()
 // const repContas = new RepositorioContas();
 //
 // const c1 = new Conta('1', 100);
